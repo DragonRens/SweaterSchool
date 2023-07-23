@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0;"/>
+    <title>邓州市第一高级中学 - 用户登录</title>
+    <link rel="stylesheet" href="/static/css/login_v1.css"/>
+</head>
+<body>
+    <div id="toolbar-placeholder"></div>
+    <div class="login-container">
+        <h2>用户登录</h2>
+        <form action="login.php" method="post">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" class="input-field" required>
+
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" class="input-field" required>
+
+            <input type="submit" value="登录" class="submit-btn">
+        </form>
+    </div>
+
+    <script src="/static/js/load_toolbar.js"></script> <!-- 引入JavaScript脚本 -->
+</body>
+</html>

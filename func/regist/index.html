@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0;"/>
+    <title>邓州市第一高级中学 - 用户注册</title>
+    <link rel="stylesheet" href="/static/css/regist_v1.css"/> <!-- 引入regist_v1.css -->
+</head>
+<body>
+    <div id="toolbar-placeholder"></div>
+
+    <div class="login-container">
+        <h2>用户注册</h2>
+        <div class="form-container"> <!-- 使用<div>替换<form>，添加类名form-container -->
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" class="input-field" required>
+
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" class="input-field" required>
+
+            <label for="email">电子邮件:</label>
+            <input type="email" id="email" name="email" class="input-field" required>
+
+            <div class="submit-btn" id="register-btn">注册</div> <!-- 使用<div>替换<input type="submit">，添加类名submit-btn -->
+        </div>
+    </div>
+
+    <!-- 引入alert_v1.js弹窗库 -->
+    <script src="/static/js/alert_v1.js"></script>
+    <script src="/static/js/load_toolbar.js"></script>
+
+    <script>
+        // 注册按钮点击事件处理
+        document.getElementById("register-btn").addEventListener("click", function() {
+            // 获取表单数据
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+
+            // 判断用户名、密码和邮箱是否为空
+            if (username.trim() === "" || password.trim() === "" || email.trim() === "") {
+                showAlert("用户名、密码和邮箱不能为空！", "error");
+                return; // 终止后续操作
+            }
+
+            // 判断用户名是否含有特殊字符（只允许字母、数字、下划线）
+            var usernameRegex = /^[a-zA-Z0-9_]+$/;
+            if (!usernameRegex.test(username)) {
+                showAlert("用户名只能包含字母、数字和下划线！", "error");
+                return; // 终止后续操作
+            }
+
+            // 判断邮箱格式是否正确
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                showAlert("邮箱格式不正确！", "error");
+                return; // 终止后续操作
+            }
+
+            // 构建请求参数对象
+            var data = {
+                username: username,
+                password: password,
+                email: email
+            };
+
+
+            // 发送POST请求
+            fetch("/service/account/regist.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                // 显示注册结果弹窗
+                if (result.success) {
+                    showAlert("注册成功！", "success");
+                } else {
+                    showAlert("注册失败：" + result.message, "error");
+                }
+            })
+            .catch(error => {
+                showAlert("请求失败：" + error.message, "error");
+            });
+        });
+    </script>
+</body>
+</html>
