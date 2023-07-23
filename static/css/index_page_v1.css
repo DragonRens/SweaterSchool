@@ -5,7 +5,6 @@
     height: calc(100% - 50px);
 }
 .index-page-description .parent-bottom{
-    position: absolute;
     white-space: nowrap;
 }
 .index-page-description .index-page-chevron-up{
