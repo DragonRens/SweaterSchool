@@ -1,0 +1,16 @@
+#inputer{
+    width: 300px;
+    height:50px;
+}
+#character{
+    background-color: #00bbff;
+    border-radius: 20px;
+    font-size: 40px;
+    display: inline-flex;
+}
+#count{
+    background-color: #00bbff;
+    border-radius: 20px;
+    font-size: 40px;
+    display: inline-flex;
+}

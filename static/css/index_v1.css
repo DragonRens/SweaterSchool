@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100%;
+}
+#tool-bar{
+    height: 50px;
+    width: 100%;
+    background-color: #145482e4;
+}
+#tool-bar .tool-bar-link{
+    position: absolute;
+    right: 0;
+    display: inline-flex;
+    height: 30px;
+    padding: 5px;
+    padding-right: 40px;
+}
+#tool-bar .tool-bar-link a{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 15px;
+    color: #DDDDDD;
+    padding: 0 20px 0 20px;
+    transition: background-color .25s;
+    border-radius: 5px;
+    user-select: none;
+}
+#tool-bar .tool-bar-link a:hover{
+    background-color: rgba(178, 178, 178, 0.156);
+}
+.center-picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+.content{
+    width: 100%;
+}

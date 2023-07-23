@@ -1,0 +1,26 @@
+.indexpage-description{
+    position: absolute;
+    background: linear-gradient(#145482e4, #00b3ffcb);
+    width: 100%;
+    height: calc(100% - 50px);
+}
+.indexpage-description .parent-buttom{
+    position: absolute;
+}
+.indexpage-description .indexpage-chevron-up{
+    border-radius: 5px;
+    right: 50%;
+    transform: translate(50%);
+    position: absolute;
+    bottom: 10%;
+    transition: background-color 0.5s;
+    padding: 0 10px 0 10px;
+}
+.indexpage-description .indexpage-chevron-up:hover{
+    background-color: #ddddddaf;
+    backdrop-filter: saturate(100%) blur(5px);
+}
+.center-picture span{
+    color: #eeeeee;
+    font-size: 30px;
+}
