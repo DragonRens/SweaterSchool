@@ -1,13 +1,14 @@
-.indexpage-description{
+.index-page-description{
     position: absolute;
     background: linear-gradient(#145482e4, #00b3ffcb);
     width: 100%;
     height: calc(100% - 50px);
 }
-.indexpage-description .parent-buttom{
+.index-page-description .parent-bottom{
     position: absolute;
+    white-space: nowrap;
 }
-.indexpage-description .indexpage-chevron-up{
+.index-page-description .index-page-chevron-up{
     border-radius: 5px;
     right: 50%;
     transform: translate(50%);
@@ -16,7 +17,7 @@
     transition: background-color 0.5s;
     padding: 0 10px 0 10px;
 }
-.indexpage-description .indexpage-chevron-up:hover{
+.index-page-description .index-page-chevron-up:hover{
     background-color: #ddddddaf;
     backdrop-filter: saturate(100%) blur(5px);
 }
